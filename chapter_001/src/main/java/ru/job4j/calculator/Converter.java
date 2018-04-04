@@ -8,7 +8,7 @@ public class Converter {
     /**
      * Конвертируем рубли в евро.
      * @param value рубли.
-     * @return Евро.
+     * @return Евро
      */
     public int roubleToEuro(int value) {
         this.result = value / 70;
