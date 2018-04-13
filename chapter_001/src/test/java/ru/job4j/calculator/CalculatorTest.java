@@ -6,6 +6,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class CalculatorTest {
+
     @Test
     public void whenAddOnePlusOneThenTwo() {
         Calculator calc = new Calculator();
@@ -14,6 +15,7 @@ public class CalculatorTest {
         double expected = 2D;
         assertThat(result, is(expected));
     }
+
     @Test
     public void whenSubtractTwoMinusOneThenOne() {
         Calculator calc = new Calculator();
@@ -21,7 +23,8 @@ public class CalculatorTest {
         double result = calc.getResult();
         double expected = 1D;
         assertThat(result, is(expected));
-        }
+    }
+
     @Test
     public void whenDivideTenByTwoThenFive() {
         Calculator calc = new Calculator();
@@ -30,6 +33,7 @@ public class CalculatorTest {
         double expected = 5D;
         assertThat(result, is(expected));
     }
+
     @Test
     public void whenMultiplyTwoByTwoThenFour() {
         Calculator calc = new Calculator();
