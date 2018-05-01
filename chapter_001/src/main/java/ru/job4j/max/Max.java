@@ -9,9 +9,12 @@ public class Max {
     }
 
     public int max(int first, int second, int third){
-//        int temp = this.max(first, second);
-        int temp = this.max(max(first,second), third);
 
-        return temp;
+//        int temp = this.max(max(first,second), third);
+
+        /*
+        * Иное решение
+        */
+        return this.max(max(first,second), third);
     }
 }
