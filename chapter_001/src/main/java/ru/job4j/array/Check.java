@@ -6,11 +6,12 @@ public class Check {
         boolean result = false;
 
         for(int i = 0; i < data.length; i++) {
-            if (data[i] == false){
-                result = true;
-            } else if(data[i] == true) {
-                result = false;
-            } else result = false;
+                if (data[i] != data[i + 1]) {
+                    result = false;
+                    break;
+                } else {
+                    result = true;
+                }
         }
         return result;
     }
