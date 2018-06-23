@@ -9,9 +9,9 @@ public class BubbleSortTest {
     @Test
     public void whenSortArrayWithTenElementsThenSortedArray() {
         BubbleSort sort = new BubbleSort();
-        int[] input = new int[]{2, 5, 12, 6};
+        int[] input = new int[]{12, 5, 2, 6, 4};
         int[] result = sort.sort(input);
-        int[] expect = new int[]{2, 5, 6, 12};
+        int[] expect = new int[]{2, 4, 5, 6, 12};
         assertThat(result,is(expect));
     }
     @Test
