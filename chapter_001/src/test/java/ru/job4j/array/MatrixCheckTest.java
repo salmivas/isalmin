@@ -17,11 +17,24 @@ public class MatrixCheckTest {
         assertThat(result, is(false));
     }
     @Test
+    public void False() {
+        MatrixCheck check = new MatrixCheck();
+        boolean[][] input = new boolean[][] {
+                {true, true, false, false, false},
+                {false, false, true, false, false},
+                {true, false, true, false, false},
+                {true, false, true, false, false},
+                {true, false, true, false, false}
+        };
+        boolean result = check.mono(input);
+        assertThat(result, is(false));
+    }
+    @Test
     public void whenDataMonoByTrueThenTrue() {
         MatrixCheck check = new MatrixCheck();
         boolean[][] input = new boolean[][] {
                 {true, true, true},
-                {false, true, false},
+                {false, true, true},
                 {true, false, true}
         };
         boolean result = check.mono(input);
