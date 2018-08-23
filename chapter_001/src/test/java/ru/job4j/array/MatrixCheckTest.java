@@ -17,7 +17,7 @@ public class MatrixCheckTest {
         assertThat(result, is(false));
     }
     @Test
-    public void False() {
+    public void fiveByFiveMatrixFalse() {
         MatrixCheck check = new MatrixCheck();
         boolean[][] input = new boolean[][] {
                 {true, true, false, false, true},

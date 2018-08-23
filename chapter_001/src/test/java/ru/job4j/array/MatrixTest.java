@@ -16,7 +16,7 @@ public class MatrixTest {
         assertThat(table, is(expect));
     }
     @Test
-    public void when5by5(){
+    public void when5by5() {
         Matrix matrix = new Matrix();
         int[][] table = matrix.multiple(5);
         int[][] expect = {

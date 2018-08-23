@@ -21,8 +21,8 @@ public class MaxTest {
     }
 
     @Test
-    public void whenThirdMoreThenAll(){
-        Max maxim = new Max ();
+    public void whenThirdMoreThenAll() {
+        Max maxim = new Max();
         int result = maxim.max(2, 4, 8);
         assertThat(result, is(8));
     }

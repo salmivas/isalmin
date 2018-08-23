@@ -3,14 +3,14 @@ package ru.job4j.array;
 public class ArrayChar {
     private char[] data;
 
-    public ArrayChar(String line){
+    public ArrayChar(String line) {
         this.data = line.toCharArray();
     }
-    public boolean startWith(String prefix){
+    public boolean startWith(String prefix) {
         boolean result = true;
         char[] value = prefix.toCharArray();
-        for(int i = 0; i < value.length; i++){
-            if(value.length > this.data.length){
+        for (int i = 0; i < value.length; i++) {
+            if (value.length > this.data.length) {
                 result = false;
                 break;
             } else {

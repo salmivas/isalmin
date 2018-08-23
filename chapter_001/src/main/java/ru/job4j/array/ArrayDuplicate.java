@@ -2,7 +2,7 @@ package ru.job4j.array;
 import java.util.Arrays;
 
 public class ArrayDuplicate {
-    public String[] remove(String[] array){
+    public String[] remove(String[] array) {
         int out;
         int in;
         int bunch = array.length;
