@@ -18,10 +18,6 @@ public class Logic3T {
      */
     public boolean isWinnerX() {
         boolean retVal = false;
-        if (this.fillBy(Figure3T::hasMarkX, 0, 0, 1, 1)
-                || this.fillBy(Figure3T::hasMarkX, this.table.length - 1, 0, -1, 1)) {
-            retVal = true;
-        }
         for (int index = 0; index != this.table.length; index++) {
             if (this.fillBy(Figure3T::hasMarkX, index, 0, 0, 1)
                     || this.fillBy(Figure3T::hasMarkX, 0, index, 1, 0)) {
@@ -29,17 +25,14 @@ public class Logic3T {
                 break;
             }
         }
-        return retVal;
+        return retVal || this.fillBy(Figure3T::hasMarkX, 0, 0, 1, 1)
+                || this.fillBy(Figure3T::hasMarkX, this.table.length - 1, 0, -1, 1);
     }
     /**
      * @return true если победили "нолики".
      */
     public boolean isWinnerO() {
         boolean retVal = false;
-        if (this.fillBy(Figure3T::hasMarkO, 0, 0, 1, 1)
-                || this.fillBy(Figure3T::hasMarkO, this.table.length - 1, 0, -1, 1)) {
-            retVal = true;
-        }
         for (int index = 0; index != this.table.length; index++) {
             if (this.fillBy(Figure3T::hasMarkO, index, 0, 0, 1)
                     || this.fillBy(Figure3T::hasMarkO, 0, index, 1, 0)) {
@@ -47,7 +40,8 @@ public class Logic3T {
                 break;
             }
         }
-        return retVal;
+        return retVal || this.fillBy(Figure3T::hasMarkO, 0, 0, 1, 1)
+                || this.fillBy(Figure3T::hasMarkO, this.table.length - 1, 0, -1, 1);
     }
 
     /**
