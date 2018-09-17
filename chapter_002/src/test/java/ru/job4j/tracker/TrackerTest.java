@@ -39,10 +39,12 @@ public class TrackerTest {
         Item firstItem = new Item("test1","testDescription",123L);
         Item secondItem = new Item("test2", "TestDescription2", 1234L);
         Item thirdItem = new Item("test3", "TestDescription3", 12345L);
+        Item forthItem = new Item("test2", "TestDescription3", 12345L);
         tracker.add(firstItem);
         tracker.add(secondItem);
         tracker.add(thirdItem);
-        assertThat(tracker.findByName(thirdItem.getName()), is(thirdItem));
+        tracker.add(forthItem);
+        assertThat(tracker.findByName("test2"), is(new Item[]{secondItem, forthItem}));
     }
 
     @Test

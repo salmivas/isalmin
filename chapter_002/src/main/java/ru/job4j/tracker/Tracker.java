@@ -89,13 +89,14 @@ public class Tracker {
      */
     public Item[] findByName(String key) {
         int numberOfFoundElements = 0;
-        Item[] resultArray = new Item[this.items.length];
+        Item[] searchedArray = new Item[this.items.length];
         for (int i  = 0; i < this.items.length; i++) {
             if (this.items[i] != null && this.items[i].getName().equals(key)) {
-                resultArray[numberOfFoundElements++] = this.items[i];
+                searchedArray[numberOfFoundElements++] = this.items[i];
             }
         }
-        System.arraycopy(resultArray, 0, resultArray, 0, numberOfFoundElements);
+        Item[] resultArray = new Item[numberOfFoundElements];
+        System.arraycopy(searchedArray, 0, resultArray, 0, numberOfFoundElements);
         return resultArray;
     }
 
