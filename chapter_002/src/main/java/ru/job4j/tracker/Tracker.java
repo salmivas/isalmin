@@ -106,7 +106,7 @@ public class Tracker {
      * @return найденный элемент.
      */
     public Item findById(String id) {
-        Item reqItem = null;
+        Item reqItem = new Item("null",  "null", 0);
         for (int index = 0; index < this.items.length; index++) {
             if (this.items[index].getId().equals(id)) {
                 reqItem = this.items[index];
