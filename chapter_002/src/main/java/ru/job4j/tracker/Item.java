@@ -5,13 +5,18 @@ public class Item {
     private String name;
     private String desc;
     private long created;
-    private String [] comments;
+    private String[] comments;
     public Item(String name, String desc, long created) {
         this.name = name;
         this.desc = desc;
         this.created = created;
     }
 
+    public String toString() {
+        return "ID заявки: " + this.getId() + System.lineSeparator() +
+                "Имя заявки: " + this.getName() + System.lineSeparator() +
+                "Создана: " + this.getCreated() + System.lineSeparator();
+    }
 
     public void setId(String id) {
         this.id = id;

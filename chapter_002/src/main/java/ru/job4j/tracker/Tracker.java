@@ -20,6 +20,7 @@ public class Tracker {
 
     /**
      * Реализует добавление новых заявок в хранилище.
+     *
      * @param item новая заявка.
      * @return item.
      */
@@ -31,6 +32,7 @@ public class Tracker {
 
     /**
      * Генерирует уникальный ключ для заявки.
+     *
      * @return уникальный ключ.
      */
     private String generateId() {
@@ -39,12 +41,13 @@ public class Tracker {
 
     /**
      * Ищет ячейку по id, присваивает найденной ячейке объект(меняет ячейку требуемой) принимаемый в аргументе.
+     *
      * @param id   искомая ячейка.
      * @param item ячейка которая должна заменить искомую.
      */
     public boolean replace(String id, Item item) {
         boolean check = false;
-        for (int index = 0; index < items.length; index++) {
+        for (int index = 0; index < position; index++) {
             if (this.items[index].getId().equals(id)) {
                 this.items[index] = item;
                 item.setId(id);
@@ -57,19 +60,17 @@ public class Tracker {
 
     /**
      * Удаляет ячейку, найденную по уникальному строковому ключу.
+     *
      * @param id строковый ключ.
      */
     public boolean delete(String id) {
-        boolean check = true;
-        Item[] innerItems = this.items;
-        Item delItem = findById(id);
-        int innerItemsLength = innerItems.length;
-        int indexOfDelItem = Arrays.asList(this.items).indexOf(delItem);
-        int numMoved = innerItemsLength - indexOfDelItem - 1;
-        if (delItem != null) {
-            System.arraycopy(innerItems, indexOfDelItem + 1, innerItems, indexOfDelItem, numMoved);
-        } else {
-            check = false;
+        boolean check = false;
+        for (int i = 0; i < position; i++) {
+            if (items[i].getId().equals(id)) {
+                System.arraycopy(this.items, i + 1, this.items, i, position - i - 1);
+                position--;
+                check = true;
+            }
         }
         return check;
     }
@@ -89,25 +90,24 @@ public class Tracker {
      */
     public Item[] findByName(String key) {
         int numberOfFoundElements = 0;
-        Item[] searchedArray = new Item[this.items.length];
-        for (int i  = 0; i < this.items.length; i++) {
+        Item[] searchedArray = new Item[this.position];
+        for (int i = 0; i < this.position; i++) {
             if (this.items[i] != null && this.items[i].getName().equals(key)) {
                 searchedArray[numberOfFoundElements++] = this.items[i];
             }
         }
-        Item[] resultArray = new Item[numberOfFoundElements];
-        System.arraycopy(searchedArray, 0, resultArray, 0, numberOfFoundElements);
-        return resultArray;
+        return Arrays.copyOf(searchedArray, numberOfFoundElements);
     }
 
     /**
      * Производит поиск по уникальному строковому ключу ячейки и возвращает найденный элемент.
+     *
      * @param id строковый индекс ячейки.
      * @return найденный элемент.
      */
     public Item findById(String id) {
-        Item reqItem = new Item("null",  "null", 0);
-        for (int index = 0; index < this.items.length; index++) {
+        Item reqItem = new Item("null", "null", 0);
+        for (int index = 0; index < this.position; index++) {
             if (this.items[index].getId().equals(id)) {
                 reqItem = this.items[index];
                 break;
