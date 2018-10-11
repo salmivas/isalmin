@@ -143,9 +143,9 @@ public class StartUI {
         String name = this.input.ask("Введите имя заявки: ");
         Item[] targetItems = this.tracker.findByName(name);
         if(targetItems.length == 0){
-            System.out.println("--- По имени " + ("\"") + name + ("\"") + " заявки не найдены! ---" + System.lineSeparator());
+            System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " заявки не найдены! ---");
         } else {
-            System.out.println("--- По имени " + ("\"") + name + ("\"") + " найдены сделующие заявки! ---" + System.lineSeparator());
+            System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " найдены следующие заявки: ---");
             for(Item items: targetItems) {
                 System.out.println(items.toString());
             }
