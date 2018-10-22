@@ -1,5 +1,5 @@
-# Репозиторий Ивана Салмина.
+# Ivan Salmin's repository.
 
-Я прохожу обучение по курсу Job4j. Планирую пройти его в конце 2018 года. 
+I'm taking the "Job4j-Java" course. And I'm going to pass it by the end of 2019.
 
-Ниже находятся наиболее интересные проекты, которые я реализовывал в процессе обучения.
+The repository contents the most interesting projects, which I've been realizing during the training process.
