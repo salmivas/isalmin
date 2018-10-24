@@ -13,9 +13,9 @@ public class Item {
     }
 
     public String toString() {
-        return "ID заявки: " + this.getId() + System.lineSeparator() +
-                "Имя заявки: " + this.getName() + System.lineSeparator() +
-                "Создана: " + this.getCreated() + System.lineSeparator();
+        return "ID заявки: " + this.getId() + System.lineSeparator()
+                + "Имя заявки: " + this.getName() + System.lineSeparator()
+                + "Создана: " + this.getCreated() + System.lineSeparator();
     }
 
     public void setId(String id) {

@@ -57,13 +57,13 @@ public class StartUI {
      */
     public void showMenu() {
         System.out.println("Menu.");
-        System.out.println("0. Add new Item" + System.lineSeparator() +
-                "1. Show all items" + System.lineSeparator() +
-                "2. Edit item" + System.lineSeparator() +
-                "3. Delete item" + System.lineSeparator() +
-                "4. Find item by ID" + System.lineSeparator() +
-                "5. Find items by name" + System.lineSeparator() +
-                "6. Exit Program");
+        System.out.println("0. Add new Item" + System.lineSeparator()
+                + "1. Show all items" + System.lineSeparator()
+                + "2. Edit item" + System.lineSeparator()
+                + "3. Delete item" + System.lineSeparator()
+                + "4. Find item by ID" + System.lineSeparator()
+                + "5. Find items by name" + System.lineSeparator()
+                + "6. Exit Program");
     }
 
     /**
@@ -100,7 +100,7 @@ public class StartUI {
         String desc = this.input.ask("Введите новое описание заявки: ");
         Long date = System.currentTimeMillis();
         Item item = new Item(name, desc, date);
-        if(this.tracker.replace(id, item)) {
+        if (this.tracker.replace(id, item)) {
             System.out.println("Item has been edited!");
         } else {
             System.out.println("Item was not found!");
@@ -113,7 +113,7 @@ public class StartUI {
     private void deleteItem() {
         System.out.println("------------ Удаление заявки --------------");
         String id = this.input.ask("Введите ID заявки: ");
-        if(this.tracker.delete(id)) {
+        if (this.tracker.delete(id)) {
             System.out.println("Item has been deleted!");
         } else {
             System.out.println("Item was not found!");
@@ -142,11 +142,11 @@ public class StartUI {
         System.out.println("------------ Поиск заявки --------------");
         String name = this.input.ask("Введите имя заявки: ");
         Item[] targetItems = this.tracker.findByName(name);
-        if(targetItems.length == 0){
+        if (targetItems.length == 0) {
             System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " заявки не найдены! ---");
         } else {
             System.out.printf("--- По имени %s%s%s%s%n", "\"", name, "\"", " найдены следующие заявки: ---");
-            for(Item items: targetItems) {
+            for (Item items: targetItems) {
                 System.out.println(items.toString());
             }
         }

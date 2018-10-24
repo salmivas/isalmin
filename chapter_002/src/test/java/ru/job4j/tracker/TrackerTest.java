@@ -12,7 +12,7 @@ public class TrackerTest {
     @Test
     public void whenReplaceNameThenReturnName() {
         Tracker tracker = new Tracker();
-        Item previous = new Item("test1","testDescription",123L);
+        Item previous = new Item("test1", "testDescription", 123L);
         tracker.add(previous);
         Item next = new Item("test2", "TestDescription2", 1234L);
         next.setId(previous.getId());
@@ -23,7 +23,7 @@ public class TrackerTest {
     @Test
     public void deleteItem() {
         Tracker tracker = new Tracker();
-        Item firstItem = new Item("test1","testDescription",123L);
+        Item firstItem = new Item("test1", "testDescription", 123L);
         Item secondItem = new Item("test2", "TestDescription2", 1234L);
         Item thirdItem = new Item("test3", "TestDescription3", 12345L);
         tracker.add(firstItem);
@@ -36,7 +36,7 @@ public class TrackerTest {
     @Test
     public void findNameByKey() {
         Tracker tracker = new Tracker();
-        Item firstItem = new Item("test1","testDescription",123L);
+        Item firstItem = new Item("test1", "testDescription", 123L);
         Item secondItem = new Item("test2", "TestDescription2", 1234L);
         Item thirdItem = new Item("test3", "TestDescription3", 12345L);
         Item forthItem = new Item("test2", "TestDescription3", 12345L);
@@ -50,7 +50,7 @@ public class TrackerTest {
     @Test
     public void findNameById() {
         Tracker tracker = new Tracker();
-        Item firstItem = new Item("test1","testDescription",123L);
+        Item firstItem = new Item("test1", "testDescription", 123L);
         Item secondItem = new Item("test2", "TestDescription2", 1234L);
         Item thirdItem = new Item("test3", "TestDescription3", 12345L);
         tracker.add(firstItem);
