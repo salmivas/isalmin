@@ -12,6 +12,11 @@ public class Item {
         this.created = created;
     }
 
+    public Item(String name, String desc) {
+        this.name = name;
+        this.desc = desc;
+    }
+
     public String toString() {
         return "ID заявки: " + this.getId() + System.lineSeparator()
                 + "Имя заявки: " + this.getName() + System.lineSeparator()
