@@ -55,6 +55,19 @@ public class StartUITest {
         Item thirdItem = tracker.add(new Item("test item", "third desc"));
         Input input = new StubInput(new String[]{item.getName(), item.getDesc(),
                 secondItem.getName(), secondItem.getDesc(), thirdItem.getName(), thirdItem.getDesc(),
+                "4", item.getId(), "6"});
+        new StartUI(input, tracker).init();
+        assertThat(tracker.findById(secondItem.getId()).getId(), is(secondItem.getId()));
+    }
+
+    @Test
+    public void findItemByName() {
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("test item", "desc"));
+        Item secondItem = tracker.add(new Item("second item", "second desc"));
+        Item thirdItem = tracker.add(new Item("test item", "third desc"));
+        Input input = new StubInput(new String[]{item.getName(), item.getDesc(),
+                secondItem.getName(), secondItem.getDesc(), thirdItem.getName(), thirdItem.getDesc(),
                 "5", item.getName(), "6"});
         Item[] items = new Item[]{item, thirdItem};
         new StartUI(input, tracker).init();
