@@ -27,4 +27,19 @@ public class PaintTest {
                 .toString()));
         System.setOut(stdOut);
     }
+
+    @Test
+    public void whenDrawTriangle() {
+        PrintStream stdOut = System.out;
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        new Paint().draw(new Triangle());
+        assertThat(new String(out.toByteArray()), is(new StringBuilder()
+                .append("  *  ")
+                .append(" * * ")
+                .append("*****")
+                .append(System.lineSeparator())
+                .toString()));
+        System.setOut(stdOut);
+    }
 }
